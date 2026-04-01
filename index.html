@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brawl Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🌟 Brawl Hub</h1>
+        
+        <div class="controls">
+            <input type="text" id="searchInput" placeholder="Search Brawlers...">
+            
+            <select id="rarityFilter">
+                <option value="all">All Rarities</option>
+                <option value="Legendary">Legendary</option>
+                <option value="Mythic">Mythic</option>
+                <option value="Epic">Epic</option>
+                <option value="Rare">Rare</option>
+            </select>
+
+            <select id="sortOption">
+                <option value="default">Sort By...</option>
+                <option value="name">Name (A-Z)</option>
+                <option value="healthDesc">Highest Health</option>
+                <option value="speedDesc">Highest Speed</option>
+            </select>
+        </div>
+    </header>
+
+    <main>
+        <div id="brawlerContainer" class="grid-container">
+            <p id="loadingMessage">Fetching Brawlers from Starr Park...</p>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
