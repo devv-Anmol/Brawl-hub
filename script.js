@@ -56,3 +56,49 @@ function renderBrawlers(brawlersArray) {
 
 
 fetchBrawlers();
+
+
+const searchInput = document.getElementById('searchInput');
+const rarityFilter = document.getElementById('rarityFilter');
+const sortOption = document.getElementById('sortOption');
+
+
+searchInput.addEventListener('input', updateBrawlers);
+rarityFilter.addEventListener('change', updateBrawlers);
+sortOption.addEventListener('change', updateBrawlers);
+
+
+function updateBrawlers() {
+
+    const searchTerm = searchInput.value.toLowerCase();
+    const selectedRarity = rarityFilter.value;
+    const selectedSort = sortOption.value;
+
+  
+    let processedBrawlers = [...allBrawlers];
+
+    
+    if (searchTerm !== '') {
+        processedBrawlers = processedBrawlers.filter(brawler => 
+            brawler.name.toLowerCase().includes(searchTerm)
+        );
+    }
+
+
+    if (selectedRarity !== 'all') {
+        processedBrawlers = processedBrawlers.filter(brawler => 
+            brawler.rarity.name === selectedRarity
+        );
+    }
+
+
+    if (selectedSort === 'name') {
+
+        processedBrawlers.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (selectedSort === 'healthDesc') {
+
+        processedBrawlers.sort((a, b) => b.name.localeCompare(a.name));
+    }
+
+    renderBrawlers(processedBrawlers);
+}
