@@ -19,3 +19,5 @@ This project integrates the public **BrawlAPI** to fetch real-time game data.
 - CSS3
 - Vanilla JavaScript (ES6+ Array Higher-Order Functions)
 - Fetch API
+
+Live Demo :- https://brawl-hub-nine.vercel.app/
